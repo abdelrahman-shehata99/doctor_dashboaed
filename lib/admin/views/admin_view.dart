@@ -55,7 +55,7 @@ class _AdminViewState extends State<AdminView> {
                   CustomButtonV(
                     text: 'الأطباء',
                     onPressed: () {
-                      Get.to(doctorsView());
+                      Get.to(DoctorsView());
                     },
                     img: 'assets/images/intro1.jpeg',
                   ),

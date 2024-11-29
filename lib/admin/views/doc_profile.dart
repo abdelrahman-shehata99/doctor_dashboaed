@@ -5,11 +5,9 @@
 import 'package:doctor/core/widgets/adv.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:doctor/features/user/doctorUser/controller/doctor_controller.dart';
-import 'package:doctor/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/resources/app_colors.dart';
