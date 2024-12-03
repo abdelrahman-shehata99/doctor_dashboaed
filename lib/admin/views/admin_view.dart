@@ -1,8 +1,8 @@
+import 'package:doctor/admin/comp/comp_view.dart';
 import 'package:doctor/admin/controller/admin_controller.dart';
 import 'package:doctor/admin/views/doctors_view.dart';
 import 'package:doctor/admin/views/users_view.dart';
 import 'package:doctor/admin/widget/custome_button.dart';
-import 'package:doctor/features/st/top_doc.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -48,7 +48,7 @@ class _AdminViewState extends State<AdminView> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount:4,
+                    crossAxisCount: 4,
                     mainAxisSpacing: 15,
                     crossAxisSpacing: 20),
                 children: [
@@ -80,12 +80,19 @@ class _AdminViewState extends State<AdminView> {
                     },
                     img: 'assets/images/intro3.jpeg',
                   ),
+                  // CustomButtonV(
+                  //   text: 'الاعلي تقييما',
+                  //   onPressed: () {
+                  //     Get.to(TopDocView());
+                  //   },
+                  //   img: 'assets/images/otp.png',
+                  // ),
                   CustomButtonV(
-                    text: 'الاعلي تقييما',
+                    text: 'عرض الشكاوي',
                     onPressed: () {
-                      Get.to(TopDocView());
+                      Get.to(CompView());
                     },
-                    img: 'assets/images/otp.png',
+                    img: 'assets/images/intro3.jpeg',
                   ),
                 ],
               ),
