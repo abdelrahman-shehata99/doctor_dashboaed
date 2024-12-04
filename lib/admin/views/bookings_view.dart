@@ -1,5 +1,6 @@
 import 'package:doctor/admin/controller/booking_controller.dart';
 import 'package:doctor/core/resources/app_colors.dart';
+import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,9 +44,9 @@ class _BookingsViewState extends State<BookingsView> {
             },
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-             // maxCrossAxisExtent: screenWidth * .5, // Max width per card
+              // maxCrossAxisExtent: screenWidth * .5, // Max width per card
               mainAxisSpacing: 10,
-             mainAxisExtent: screenHeight * .65,
+              mainAxisExtent: screenHeight * .65,
               crossAxisSpacing: 10,
             ));
       }),
@@ -184,15 +185,31 @@ class BookingCard extends StatelessWidget {
                 "الغاء الحجز",
                 Colors.red,
                 screenWidth,
-                () => controller.cancel(data['booking_id']),
+                () {
+                  AppValidations.showMessageBoxDelete(
+                          'Cancel Booking ?', 'Cancel')
+                      .then((v) {
+                    if (v!) {
+                      controller.cancel(data['booking_id']);
+                    }
+                  });
+                },
               ),
-                           
+
             if (isCancelled)
               _buildActionButton(
                 "حذف",
                 Colors.red,
                 screenWidth,
-                () => controller.delete(data['booking_id']),
+                () {
+                  AppValidations.showMessageBoxDelete(
+                          'Delete Booking ?', 'Delete')
+                      .then((v) {
+                    if (v!) {
+                      controller.delete(data['booking_id']);
+                    }
+                  });
+                },
               ),
           ],
         ),
@@ -250,7 +267,6 @@ class BookingCard extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-           
           ],
         ),
       ),

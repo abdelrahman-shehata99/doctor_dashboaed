@@ -55,28 +55,28 @@ class _AdminViewState extends State<AdminView> {
                   CustomButtonV(
                     text: 'الأطباء',
                     onPressed: () {
-                      Get.to(DoctorsView());
+                      Get.to(()=>DoctorsView());
                     },
                     img: 'assets/images/intro1.jpeg',
                   ),
                   CustomButtonV(
                     text: 'المستخدمين',
                     onPressed: () {
-                      Get.to(UsersView());
+                      Get.to(()=>UsersView());
                     },
                     img: 'assets/images/noChat.png',
                   ),
                   CustomButtonV(
                     text: 'الحجوزات',
                     onPressed: () {
-                      Get.to(BookingsView());
+                      Get.to(()=>BookingsView());
                     },
                     img: 'assets/images/intro2.png',
                   ),
                   CustomButtonV(
                     text: 'الاحصاءات',
                     onPressed: () {
-                      Get.to(StView());
+                      Get.to(()=>StView());
                     },
                     img: 'assets/images/intro3.jpeg',
                   ),
@@ -90,7 +90,7 @@ class _AdminViewState extends State<AdminView> {
                   CustomButtonV(
                     text: 'عرض الشكاوي',
                     onPressed: () {
-                      Get.to(CompView());
+                      Get.to(()=>CompView());
                     },
                     img: 'assets/images/intro3.jpeg',
                   ),

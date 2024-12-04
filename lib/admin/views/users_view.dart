@@ -1,4 +1,5 @@
 import 'package:doctor/admin/controller/user_controller.dart';
+import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -143,9 +144,9 @@ class UserCardWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const SizedBox(height: 10),
-                  Image.asset(
-                    'assets/images/user2.png',
-                    height: 100,
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(user['image']),
+                    radius: 40, // Responsive image size
                   ),
                   const SizedBox(width: 10),
                   Text(
@@ -175,7 +176,13 @@ class UserCardWidget extends StatelessWidget {
                         color: Colors.red,
                       ),
                       onPressed: () {
-                        controller.deleteUser(int.parse(user['id']));
+                        AppValidations.showMessageBoxDelete(
+                                'Delete User ?', 'Delete')
+                            .then((v) {
+                          if (v!) {
+                            controller.deleteUser(int.parse(user['id']));
+                          }
+                        });
                       }),
                   const SizedBox(width: 10),
                 ],

@@ -1,6 +1,7 @@
 import 'package:doctor/admin/controller/doc_controller.dart';
 import 'package:doctor/admin/views/doc_profile.dart';
 import 'package:doctor/core/resources/app_colors.dart';
+import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:doctor/features/user/doctorUser/controller/doctor_controller.dart';
 import 'package:doctor/models/doctor_model.dart';
@@ -41,7 +42,7 @@ class _DoctorsViewState extends State<DoctorsView> {
             const SizedBox(height: 10),
             Container(
               padding: EdgeInsets.all(10),
-              margin: EdgeInsets.only(right: 10,left: 10),
+              margin: EdgeInsets.only(right: 10, left: 10),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(20)),
               width: screenWidth,
@@ -67,20 +68,21 @@ class _DoctorsViewState extends State<DoctorsView> {
                           color: Colors.black,
                         ),
                       ),
-                    Text(
+                      Text(
                         "القسم",
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Colors.black,
                         ),
-                      ), Text(
+                      ),
+                      Text(
                         "رقم الهاتف ",
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                   
+
                       Text(
                         "اسم الطبيب",
                         overflow: TextOverflow.ellipsis,
@@ -157,14 +159,14 @@ Widget buildDoctorCard(
         ),
       ),
       child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
             backgroundImage: NetworkImage(data['image']),
             radius: 40, // Responsive image size
           ),
           Text(
-           data['name'],
+            data['name'],
             style: GoogleFonts.alexandria(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01, // Responsive font size
@@ -173,7 +175,7 @@ Widget buildDoctorCard(
             overflow: TextOverflow.ellipsis,
           ),
           Text(
-          data['phone'],
+            data['phone'],
             style: GoogleFonts.alexandria(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01,
@@ -182,7 +184,7 @@ Widget buildDoctorCard(
             overflow: TextOverflow.ellipsis,
           ),
           Text(
-           data['cat'],
+            data['cat'],
             style: GoogleFonts.alexandria(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01,
@@ -205,7 +207,12 @@ Widget buildDoctorCard(
                 color: Colors.red,
               ),
               onPressed: () {
-                docController.deleteDoctor(int.parse(data['id']));
+                AppValidations.showMessageBoxDelete('Delete Doctor ?', 'Delete')
+                    .then((v) {
+                  if (v!) {
+                    docController.deleteDoctor(int.parse(data['id']));
+                  }
+                });
               }),
         ],
       ),
