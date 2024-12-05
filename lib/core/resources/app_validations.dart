@@ -80,7 +80,7 @@ class AppValidations {
             //   SizedBox(height: 20),
             Text(
               title,
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),
@@ -103,7 +103,7 @@ class AppValidations {
                   ),
                   child: Text(
                     refuseText,
-                    style: GoogleFonts.alexandria(color: AppColors.whiteColor),
+                    style: GoogleFonts.cairo(color: AppColors.whiteColor),
                   ),
                 ),
                 ElevatedButton(
@@ -119,7 +119,7 @@ class AppValidations {
                   ),
                   child: Text(
                     'Close'.tr,
-                    style: GoogleFonts.alexandria(color: AppColors.darkColor),
+                    style: GoogleFonts.cairo(color: AppColors.darkColor),
                   ),
                 ),
               ],

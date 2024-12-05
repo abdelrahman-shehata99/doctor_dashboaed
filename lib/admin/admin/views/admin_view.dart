@@ -55,7 +55,7 @@
 //                   child: Padding(
 //                   padding: const EdgeInsets.all(8.0),
 //                   child:Center(
-//                     child: Text("المستخدمين",style:TextStyle(
+//                     child: Text("المستخدمين",style:GoogleFonts.cairo(
 //                       color:Colors.white,fontSize: 18
 //                     ),),
 //                   ),
@@ -74,7 +74,7 @@
 //                     child: Padding(
 //                   padding: const EdgeInsets.all(8.0),
 //                   child:Center(
-//                     child: Text("الأطباء",style:TextStyle(
+//                     child: Text("الأطباء",style:GoogleFonts.cairo(
 //                       color:Colors.white,fontSize: 18
 //                     ),),
 //                   ),
@@ -100,7 +100,7 @@
 //                   child: Padding(
 //                   padding: const EdgeInsets.all(8.0),
 //                   child:Center(
-//                     child: Text("الحجوزات",style:TextStyle(
+//                     child: Text("الحجوزات",style:GoogleFonts.cairo(
 //                       color:Colors.white,fontSize: 18
 //                     ),),
 //                   ),
@@ -120,7 +120,7 @@
 //                     child: Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child:Center(
-//                         child: Text("الاحصاءات ",style:TextStyle(
+//                         child: Text("الاحصاءات ",style:GoogleFonts.cairo(
 //                             color:Colors.white,fontSize: 18
 //                         ),),
 //                       ),
@@ -148,7 +148,7 @@
 //                     child: Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child:Center(
-//                         child: Text("الاطباء الاعلي تقييما ",style:TextStyle(
+//                         child: Text("الاطباء الاعلي تقييما ",style:GoogleFonts.cairo(
 //                             color:Colors.white,fontSize: 18
 //                         ),),
 //                       ),
@@ -168,7 +168,7 @@
 //                     child: Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child:Center(
-//                         child: Text("عرض الشكاوي ",style:TextStyle(
+//                         child: Text("عرض الشكاوي ",style:GoogleFonts.cairo(
 //                             color:Colors.white,fontSize: 18
 //                         ),),
 //                       ),
@@ -197,7 +197,7 @@
 //                     child: Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child:Center(
-//                         child: Text(" عدد المستخدمين و الاطباء ",style:TextStyle(
+//                         child: Text(" عدد المستخدمين و الاطباء ",style:GoogleFonts.cairo(
 //                             color:Colors.white,fontSize: 18
 //                         ),),
 //                       ),
@@ -217,7 +217,7 @@
 //                     child: Padding(
 //                       padding: const EdgeInsets.all(8.0),
 //                       child:Center(
-//                         child: Text("عرض الشكاوي ",style:TextStyle(
+//                         child: Text("عرض الشكاوي ",style:GoogleFonts.cairo(
 //                             color:Colors.white,fontSize: 18
 //                         ),),
 //                       ),

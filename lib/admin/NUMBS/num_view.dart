@@ -2,6 +2,7 @@ import 'package:doctor/admin/comp/comp_controller.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NumView extends StatefulWidget {
    const NumView({super.key});
@@ -64,11 +65,11 @@ class NumView extends StatefulWidget {
          padding: const EdgeInsets.all(20.0),
          child: Column(children: [
 
-           Text(txt,style: TextStyle(
+           Text(txt,style: GoogleFonts.cairo(
              color:Colors.black,fontSize: 18
            ),),
            SizedBox(height: 10,),
-           Text(num,style: TextStyle(
+           Text(num,style: GoogleFonts.cairo(
              color:Colors.black,fontSize: 18
            ),),
 

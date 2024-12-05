@@ -57,28 +57,28 @@ class _DoctorsViewState extends State<DoctorsView> {
                       Text(
                         "حذف ",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
                       Text(
                         "سعر الكشف",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
                       Text(
                         "القسم",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
                       Text(
                         "رقم الهاتف ",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
@@ -86,14 +86,14 @@ class _DoctorsViewState extends State<DoctorsView> {
                       Text(
                         "اسم الطبيب",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
                       Text(
                         "صوره ",
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: GoogleFonts.cairo(
                           color: Colors.black,
                         ),
                       ),
@@ -167,7 +167,7 @@ Widget buildDoctorCard(
           ),
           Text(
             data['name'],
-            style: GoogleFonts.alexandria(
+            style: GoogleFonts.cairo(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01, // Responsive font size
               color: Colors.black,
@@ -176,7 +176,7 @@ Widget buildDoctorCard(
           ),
           Text(
             data['phone'],
-            style: GoogleFonts.alexandria(
+            style: GoogleFonts.cairo(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01,
               color: Colors.black,
@@ -185,7 +185,7 @@ Widget buildDoctorCard(
           ),
           Text(
             data['cat'],
-            style: GoogleFonts.alexandria(
+            style: GoogleFonts.cairo(
               fontWeight: FontWeight.w500,
               fontSize: screenWidth * 0.01,
               color: Colors.black,
@@ -194,7 +194,7 @@ Widget buildDoctorCard(
           ),
           Text(
             '${data['price']} دينار',
-            style: GoogleFonts.alexandria(
+            style: GoogleFonts.cairo(
               fontWeight: FontWeight.w400,
               fontSize: screenWidth * 0.01,
               color: Colors.black,
@@ -256,7 +256,7 @@ class UserCardWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   user['name'],
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                     color: Colors.black,
                     fontSize: screenWidth * 0.04,
                   ),
@@ -264,7 +264,7 @@ class UserCardWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   user['email'],
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                     color: Colors.black,
                     fontSize: screenWidth * 0.04,
                   ),
@@ -272,7 +272,7 @@ class UserCardWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   user['phone'],
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                     color: Colors.black,
                     fontSize: screenWidth * 0.04,
                   ),

@@ -3,6 +3,7 @@ import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UsersView extends StatefulWidget {
   const UsersView({super.key});
@@ -46,7 +47,7 @@ class _UsersViewState extends State<UsersView> {
                   Text(
                     "حذف ",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                       color: Colors.black,
                     ),
                   ),
@@ -54,7 +55,7 @@ class _UsersViewState extends State<UsersView> {
                   Text(
                     "رقم الهاتف ",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                       color: Colors.black,
                     ),
                   ),
@@ -62,7 +63,7 @@ class _UsersViewState extends State<UsersView> {
                   Text(
                     "بريد ",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                       color: Colors.black,
                     ),
                   ),
@@ -70,7 +71,7 @@ class _UsersViewState extends State<UsersView> {
                   Text(
                     "اسم ",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                       color: Colors.black,
                     ),
                   ),
@@ -78,7 +79,7 @@ class _UsersViewState extends State<UsersView> {
                   Text(
                     "صوره ",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                       color: Colors.black,
                     ),
                   ),
@@ -152,21 +153,21 @@ class UserCardWidget extends StatelessWidget {
                   Text(
                     user['name'],
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                         color: Colors.black, fontSize: screenWidth * .01),
                   ),
                   const SizedBox(width: 10),
                   Text(
                     user['email'],
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                         color: Colors.black, fontSize: screenWidth * .01),
                   ),
                   const SizedBox(width: 10),
                   Text(
                     user['phone'],
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: GoogleFonts.cairo(
                         color: Colors.black, fontSize: screenWidth * .01),
                   ),
                   const SizedBox(width: 10),

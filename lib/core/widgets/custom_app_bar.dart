@@ -19,7 +19,7 @@ PreferredSizeWidget CustomAppBar(
       padding: const EdgeInsets.all(24 * 1.2),
       child: Text(
         text,
-        style: GoogleFonts.alexandria(
+        style: GoogleFonts.cairo(
           fontSize: 17,
           fontWeight: FontWeight.w400,
           color: AppColors.whiteColor,

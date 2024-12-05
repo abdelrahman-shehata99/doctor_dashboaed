@@ -3,6 +3,7 @@ import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:doctor/features/st/st_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StView extends StatefulWidget {
   const StView({super.key});
@@ -147,13 +148,13 @@ Widget stCard(String txt,String num){
     child:Padding(padding: EdgeInsets.all(12),
     child: Column(children: [
 
-      Text(txt,style: TextStyle(
+      Text(txt,style: GoogleFonts.cairo(
           color:Colors.black,fontSize: 20,fontWeight: FontWeight.bold
       )),
 
       SizedBox(height: 9,),
 
-      Text(num,style: TextStyle(
+      Text(num,style: GoogleFonts.cairo(
           color:Colors.black,fontSize: 20,fontWeight: FontWeight.bold
       )),
 

@@ -96,7 +96,7 @@ class BookingCard extends StatelessWidget {
                 children: [
                   Text(
                     "تاريخ الحجز : ${data['date']}",
-                    style: GoogleFonts.alexandria(
+                    style: GoogleFonts.cairo(
                       fontWeight: FontWeight.w600,
                       fontSize: screenWidth * .01,
                       color: isCancelled ? Colors.grey : AppColors.whiteColor,
@@ -104,7 +104,7 @@ class BookingCard extends StatelessWidget {
                   ),
                   Text(
                     "وقت الحجز : ${data['time']}",
-                    style: GoogleFonts.alexandria(
+                    style: GoogleFonts.cairo(
                       fontWeight: FontWeight.w600,
                       fontSize: screenWidth * .01,
                       color: isCancelled ? Colors.grey : AppColors.whiteColor,
@@ -117,7 +117,7 @@ class BookingCard extends StatelessWidget {
             // Doctor Info
             Text(
               "بيانات الطبيب",
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -160,7 +160,7 @@ class BookingCard extends StatelessWidget {
             // User Info
             Text(
               "بيانات المستخدم",
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w600,
                 fontSize: screenWidth * .01,
               ),
@@ -224,7 +224,7 @@ class BookingCard extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: "$label: ",
-          style: TextStyle(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w600,
             fontSize: screenWidth * .01,
             color: Colors.black,
@@ -232,7 +232,7 @@ class BookingCard extends StatelessWidget {
           children: [
             TextSpan(
               text: value,
-              style: TextStyle(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w400,
                 fontSize: screenWidth * .01,
                 color: Colors.black,
@@ -261,7 +261,7 @@ class BookingCard extends StatelessWidget {
           children: [
             Text(
               text,
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w400,
                 fontSize: screenWidth * .01,
                 color: Colors.white,

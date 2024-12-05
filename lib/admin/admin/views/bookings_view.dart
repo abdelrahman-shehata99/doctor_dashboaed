@@ -1,8 +1,6 @@
 import 'package:doctor/admin/controller/booking_controller.dart';
-import 'package:doctor/admin/controller/user_controller.dart';
 import 'package:doctor/core/resources/app_colors.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
-import 'package:doctor/features/user/appointments/controller/apointment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -104,7 +102,7 @@ class BookingCard extends StatelessWidget {
                     children: [
                       Text(
                         "تاريخ الحجز : ${data['date']}",
-                        style: GoogleFonts.alexandria(
+                        style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSizeSmall,
                           color: isCancelled
@@ -114,7 +112,7 @@ class BookingCard extends StatelessWidget {
                       ),
                       Text(
                         "وقت الحجز : ${data['time']}",
-                        style: GoogleFonts.alexandria(
+                        style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w600,
                           fontSize: fontSizeSmall,
                           color: isCancelled
@@ -129,7 +127,7 @@ class BookingCard extends StatelessWidget {
                 // Doctor Info
                 Text(
                   "بيانات الطبيب",
-                  style: GoogleFonts.alexandria(
+                  style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w600,
                     fontSize: fontSizeLarge,
                   ),
@@ -160,7 +158,7 @@ class BookingCard extends StatelessWidget {
                 // User Info
                 Text(
                   "بيانات المستخدم",
-                  style: GoogleFonts.alexandria(
+                  style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w600,
                     fontSize: fontSizeLarge,
                   ),
@@ -218,7 +216,7 @@ class BookingCard extends StatelessWidget {
       child: RichText(
         text: TextSpan(
           text: "$label: ",
-          style: TextStyle(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w600,
             fontSize: fontSize,
             color: Colors.black,
@@ -226,7 +224,7 @@ class BookingCard extends StatelessWidget {
           children: [
             TextSpan(
               text: value,
-              style: TextStyle(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w400,
                 fontSize: fontSize,
                 color: Colors.black,
@@ -254,7 +252,7 @@ class BookingCard extends StatelessWidget {
           children: [
             Text(
               text,
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
                 color: Colors.white,
@@ -363,7 +361,7 @@ class BookingCard extends StatelessWidget {
 //     return RichText(
 //       text: TextSpan(
 //         text: "$label: ",
-//         style: TextStyle(
+//         style: GoogleFonts.cairo(
 //           color: Colors.black,
 //           fontWeight: FontWeight.bold,
 //           fontSize: fontSize,
@@ -371,7 +369,7 @@ class BookingCard extends StatelessWidget {
 //         children: [
 //           TextSpan(
 //             text: value,
-//             style: TextStyle(
+//             style: GoogleFonts.cairo(
 //               color: Colors.black,
 //               fontWeight: FontWeight.normal,
 //               fontSize: fontSize,

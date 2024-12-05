@@ -5,11 +5,9 @@
 import 'package:doctor/core/widgets/adv.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:doctor/features/user/doctorUser/controller/doctor_controller.dart';
-import 'package:doctor/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/resources/app_colors.dart';
@@ -64,7 +62,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
                     //  controller.doctor.value.name 
                       data['name']
                       ?? '',
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w600,
                         fontSize: 15,
                         // height: 1.1,
@@ -77,7 +75,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
                       
                       data['qualifications']
                        ?? '',
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
                         // height: 1.3,
@@ -157,7 +155,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
                               indicatorSize: TabBarIndicatorSize.values[0],
                               labelColor: AppColors.mainly,
                               indicatorColor: Colors.blueAccent,
-                              labelStyle: GoogleFonts.alexandria(
+                              labelStyle: GoogleFonts.cairo(
                                   fontSize: 9, fontWeight: FontWeight.bold),
                               indicatorWeight: 0,
                               indicator: BoxDecoration(
@@ -226,7 +224,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
           children: [
             Text(
               title,
-              style: GoogleFonts.alexandria(
+              style: GoogleFonts.cairo(
                 fontWeight: FontWeight.w600,
                 fontSize: 13,
                 color: const Color(0xFF000000),
@@ -241,7 +239,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
         const SizedBox(height: 5),
         Text(
           value,
-          style: GoogleFonts.alexandria(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w400,
             fontSize: 13,
             color: const Color.fromARGB(255, 159, 159, 159),
@@ -271,7 +269,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
         ),
         Text(
           value,
-          style: GoogleFonts.alexandria(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w600,
             fontSize: 13,
             color: const Color(0xFF000000),
@@ -280,7 +278,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
         const SizedBox(height: 3),
         Text(
           label,
-          style: GoogleFonts.alexandria(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w400,
             fontSize: 12,
             color: const Color.fromARGB(255, 170, 170, 170),
@@ -295,7 +293,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
       children: [
         Text(
           'اختر ميعاد حجزك',
-          style: GoogleFonts.alexandria(
+          style: GoogleFonts.cairo(
             fontWeight: FontWeight.w600,
             fontSize: 14,
             color: const Color(0xFF000000),
@@ -334,7 +332,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
             child: Center(
               child: Text(
                 day,
-                style: GoogleFonts.alexandria(
+                style: GoogleFonts.cairo(
                   fontWeight: FontWeight.w600,
                   fontSize: 10,
                   color: AppColors.whiteColor,
@@ -348,10 +346,10 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
               children: [
                 Text(
                   '01:00 م',
-                  style: GoogleFonts.alexandria(),
+                  style: GoogleFonts.cairo(),
                 ),
-                Text('الي', style: GoogleFonts.alexandria()),
-                Text('08:00 م', style: GoogleFonts.alexandria()),
+                Text('الي', style: GoogleFonts.cairo()),
+                Text('08:00 م', style: GoogleFonts.cairo()),
                 const SizedBox(height: 5),
                 // GestureDetector(
                 //   onTap: () {
@@ -371,7 +369,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
                 //     child: Center(
                 //       child: Text(
                 //         'حجز',
-                //         style: GoogleFonts.alexandria(
+                //         style: GoogleFonts.cairo(
                 //           fontWeight: FontWeight.w500,
                 //           fontSize: 12,
                 //           color: const Color(0xFFFFFFFF),
@@ -392,7 +390,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
     return ExpansionTile(
       title: Text(
         title,
-        style: GoogleFonts.alexandria(
+        style: GoogleFonts.cairo(
           fontWeight: FontWeight.w600,
           fontSize: 18,
           height: 1.3,
@@ -403,7 +401,7 @@ class DoctorAdminProfileView extends GetView<DoctorController> {
         ListTile(
           subtitle: Text(
             content,
-            style: GoogleFonts.alexandria(
+            style: GoogleFonts.cairo(
               fontWeight: FontWeight.w400,
               fontSize: 15,
               color: const Color(0xFF7D7D7D),
@@ -453,7 +451,7 @@ class RateDoctor extends StatelessWidget {
                     children: [
                       Text(
                         controller.comments[index].name ?? '',
-                        style: GoogleFonts.alexandria(
+                        style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w500,
                           fontSize: 13,
                           color: Colors.black,
@@ -472,7 +470,7 @@ class RateDoctor extends StatelessWidget {
                       ),
                       Text(
                         controller.comments[index].comment ?? '',
-                        style: GoogleFonts.alexandria(
+                        style: GoogleFonts.cairo(
                           fontWeight: FontWeight.w400,
                           fontSize: 8,
                           color: Colors.grey,
@@ -483,7 +481,7 @@ class RateDoctor extends StatelessWidget {
                 ),
                 Text(
                   'الاحد 13 يناير 2023',
-                  style: GoogleFonts.alexandria(
+                  style: GoogleFonts.cairo(
                     fontWeight: FontWeight.w400,
                     fontSize: 10,
                     color: Colors.grey,
@@ -521,7 +519,7 @@ class Clinic extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 5, bottom: 5, right: 20),
                   child: Text(
                     'نقدم لكم احدث الاجهذه الموجودة في العيادة',
-                    style: GoogleFonts.alexandria(
+                    style: GoogleFonts.cairo(
                         fontSize: 10, fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -540,7 +538,7 @@ class Clinic extends StatelessWidget {
                           ),
                           Text(
                             'منذ ساعه',
-                            style: GoogleFonts.alexandria(
+                            style: GoogleFonts.cairo(
                                 fontSize: 10,
                                 color: AppColors.greyColor.withOpacity(.3)),
                           )
@@ -555,7 +553,7 @@ class Clinic extends StatelessWidget {
                           ),
                           Text(
                             'مشاركه',
-                            style: GoogleFonts.alexandria(
+                            style: GoogleFonts.cairo(
                                 fontSize: 10,
                                 color: AppColors.greyColor.withOpacity(.3)),
                           )

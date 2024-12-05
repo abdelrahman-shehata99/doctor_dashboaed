@@ -105,21 +105,21 @@ final GlobalKey<FormState> formKey2 = GlobalKey<FormState>(); // Unique Key
                   children: [
                     Text(
                      "اسم الطبيب : "+ data['name'],
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
                         color: Colors.black,
                       ),
                     ), Text(
                     "رقم الهاتف : "+  data['phone'],
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
                         color: Colors.black,
                       ),
                     ), Text(
                     "القسم : "+  data['cat'],
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
                         color: Colors.black,
@@ -132,7 +132,7 @@ final GlobalKey<FormState> formKey2 = GlobalKey<FormState>(); // Unique Key
                     //     const Icon(Icons.star, color: Colors.yellow, size: 14),
                     //     Text(
                     //       data['rate'].toString(),
-                    //       style: GoogleFonts.alexandria(
+                    //       style: GoogleFonts.cairo(
                     //         fontWeight: FontWeight.w500,
                     //         fontSize: 12,
                     //         color: Colors.black,
@@ -142,7 +142,7 @@ final GlobalKey<FormState> formKey2 = GlobalKey<FormState>(); // Unique Key
                     // ),
                     Text(
                       'سعر الكشف ${data['price']} دينار',
-                      style: GoogleFonts.alexandria(
+                      style: GoogleFonts.cairo(
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
                         color: Colors.black,
@@ -158,7 +158,7 @@ final GlobalKey<FormState> formKey2 = GlobalKey<FormState>(); // Unique Key
                     const SizedBox(height: 10),
                     // Text(
                     //   data['location'],
-                    //   style: GoogleFonts.alexandria(
+                    //   style: GoogleFonts.cairo(
                     //     fontWeight: FontWeight.w400,
                     //     fontSize: 12,
                     //     color: Colors.grey,
@@ -205,15 +205,15 @@ class UserCardWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 Image.network(user['image'],height: 100,),
                 const SizedBox(height: 10),
-                Text(user['name'],style: TextStyle(
+                Text(user['name'],style: GoogleFonts.cairo(
                   color:Colors.black,fontSize: 18
                 ),),
                   const SizedBox(height: 10),
-                Text(user['email'],style: TextStyle(
+                Text(user['email'],style: GoogleFonts.cairo(
                   color:Colors.black,fontSize: 18
                 ),),
                   const SizedBox(height: 10),
-                Text(user['phone'],style: TextStyle(
+                Text(user['phone'],style: GoogleFonts.cairo(
                   color:Colors.black,fontSize: 18
                 ),),
               ],),
