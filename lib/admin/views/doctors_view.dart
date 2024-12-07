@@ -1,5 +1,6 @@
 import 'package:doctor/admin/controller/doc_controller.dart';
 import 'package:doctor/admin/views/doc_profile.dart';
+import 'package:doctor/admin/widget/searchme.dart';
 import 'package:doctor/core/resources/app_colors.dart';
 import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
@@ -39,6 +40,8 @@ class _DoctorsViewState extends State<DoctorsView> {
         textDirection: TextDirection.rtl,
         child: Column(
           children: [
+            const SizedBox(height: 10),
+            SearchMe(screenWidth: screenWidth, controller: controller),
             const SizedBox(height: 10),
             Container(
               padding: EdgeInsets.all(10),
@@ -104,30 +107,38 @@ class _DoctorsViewState extends State<DoctorsView> {
             ),
             GetBuilder<DocController>(builder: (_) {
               return SizedBox(
-                height: screenHeight * .82,
-                child: GridView.builder(
+                height: screenHeight * .74,
+                child: ListView.builder(
                   clipBehavior: Clip.antiAlias,
                   shrinkWrap: true,
                   itemCount: controller.doctorData.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: buildDoctorCard(
-                          data: controller.doctorData[index],
-                          screenWidth: screenWidth
-                          //    screenWidth: screenWidth,
-                          ),
-                    );
+                    return controller.doctorData[index]
+                                .toString()
+                                .toLowerCase()
+                                .contains('${controller.search.value}') ||
+                            controller.doctorData[index]
+                                .toString()
+                                .contains('${controller.search.value}')
+                        ? Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: buildDoctorCard(
+                                data: controller.doctorData[index],
+                                screenWidth: screenWidth
+                                //    screenWidth: screenWidth,
+                                ),
+                          )
+                        : SizedBox();
                   },
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: screenWidth, // Max width per card
-                    mainAxisSpacing: 10,
-                    mainAxisExtent: 100,
-                    crossAxisSpacing: 10,
-                    //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
+                  // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  //   maxCrossAxisExtent: screenWidth, // Max width per card
+                  //   mainAxisSpacing: 10,
+                  //   mainAxisExtent: 100,
+                  //   crossAxisSpacing: 10,
+                  //   //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
 
-                    //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
-                  ),
+                  //   //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
+                  // ),
                 ),
               );
             }),
@@ -137,6 +148,8 @@ class _DoctorsViewState extends State<DoctorsView> {
     );
   }
 }
+
+
 
 Widget buildDoctorCard(
     {required Map<String, dynamic> data, required double screenWidth

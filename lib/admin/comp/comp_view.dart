@@ -1,5 +1,6 @@
 import 'package:doctor/admin/comp/comp_controller.dart';
 import 'package:doctor/admin/comp/user_details.dart';
+import 'package:doctor/admin/widget/searchme.dart';
 import 'package:doctor/core/widgets/Custom_button.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -25,36 +26,45 @@ class _CompViewState extends State<CompView> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: CustomAppBar('الشكاوي', context, false),
-      body: GetBuilder<CompController>(builder: (_) {
-        return ListView(
-          children: [
-            SizedBox(
-              height: 12,
-            ),
-            GridView.builder(
-                shrinkWrap: true,
-                itemCount: controller.data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CompCard(
-                      data: controller.data[index],
-                      screenWidth: screenWidth,
-                    ),
-                  );
-                },
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: screenWidth, // Max width per card
-                  mainAxisSpacing: 10,
-                  mainAxisExtent: 100,
-                  crossAxisSpacing: 10,
-                )),
-          ],
-        );
-      }),
+      body: Column(
+        children: [
+          const SizedBox(height: 10),
+          SearchMe(screenWidth: screenWidth, controller: controller),
+          const SizedBox(height: 10),
+          GetBuilder<CompController>(builder: (_) {
+            return SizedBox(
+              height: screenHeight * .74,
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return controller.data[index]
+                              .toString()
+                              .toLowerCase()
+                              .contains('${controller.search.value}') ||
+                          controller.data[index]
+                              .toString()
+                              .contains('${controller.search.value}')
+                      ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CompCard(
+                        data: controller.data[index],
+                        screenWidth: screenWidth,
+                      ),
+                    ):SizedBox();
+                  },
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: screenWidth, // Max width per card
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: 100,
+                    crossAxisSpacing: 10,
+                  )),
+            );
+          }),
+        ],
+      ),
     );
   }
 }
@@ -77,8 +87,8 @@ class CompCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.only(left: 10,right: 10),
-              width: screenWidth*.3,
+              padding: EdgeInsets.only(left: 10, right: 10),
+              width: screenWidth * .3,
               child: Text(
                 data['title'],
                 overflow: TextOverflow.ellipsis,
@@ -92,7 +102,7 @@ class CompCard extends StatelessWidget {
                   color: Colors.black, fontSize: screenWidth * .012),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 10,right: 10),
+              padding: EdgeInsets.only(left: 10, right: 10),
               child: CustomButton(
                   text: 'انتقل لحساب المستخدم',
                   size: screenWidth * .012,

@@ -1,4 +1,5 @@
 import 'package:doctor/admin/controller/booking_controller.dart';
+import 'package:doctor/admin/widget/searchme.dart';
 import 'package:doctor/core/resources/app_colors.dart';
 import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
@@ -24,32 +25,55 @@ class _BookingsViewState extends State<BookingsView> {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: CustomAppBar('الحجوزات', context, false),
-      body: GetBuilder<BookingController>(builder: (_) {
-        return GridView.builder(
-            shrinkWrap: true,
-            itemCount: controller.data.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: BookingCard(
-                      data: controller.data[index],
-                      screenWidth: screenWidth,
-                      isCancelled:
-                          controller.data[index]['status'] == 'Refuse'));
-            },
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              // maxCrossAxisExtent: screenWidth * .5, // Max width per card
-              mainAxisSpacing: 10,
-              mainAxisExtent: screenHeight * .65,
-              crossAxisSpacing: 10,
-            ));
-      }),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          SearchMe(screenWidth: screenWidth, controller: controller),
+          SizedBox(
+            height: 10,
+          ),
+          GetBuilder<BookingController>(builder: (_) {
+            print('drops $screenWidth');
+            double x = screenWidth;
+            screenWidth <= 650 ? x = 350 : x = 505;
+            return Expanded(
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.data.length,
+                  itemBuilder: (context, index) {
+                    return controller.data[index]
+                                .toString()
+                                .toLowerCase()
+                                .contains('${controller.search.value}') ||
+                            controller.data[index]
+                                .toString()
+                                .contains('${controller.search.value}')
+                        ? Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: BookingCard(
+                                data: controller.data[index],
+                                screenWidth: screenWidth,
+                                isCancelled: controller.data[index]['status'] ==
+                                    'Refuse'))
+                        : SizedBox();
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    // maxCrossAxisExtent: screenWidth * .5, // Max width per card
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: x,
+                    crossAxisSpacing: 10,
+                  )),
+            );
+          }),
+        ],
+      ),
     );
   }
 }
@@ -91,26 +115,28 @@ class BookingCard extends StatelessWidget {
                 color: isCancelled ? null : AppColors.primaryBGLightColor,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "تاريخ الحجز : ${data['date']}",
-                    style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.w600,
-                      fontSize: screenWidth * .01,
-                      color: isCancelled ? Colors.grey : AppColors.whiteColor,
+              child: Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "تاريخ الحجز : ${data['date']}",
+                      style: GoogleFonts.cairo(
+                        fontWeight: FontWeight.w600,
+                        fontSize: screenWidth * .01,
+                        color: isCancelled ? Colors.grey : AppColors.whiteColor,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "وقت الحجز : ${data['time']}",
-                    style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.w600,
-                      fontSize: screenWidth * .01,
-                      color: isCancelled ? Colors.grey : AppColors.whiteColor,
+                    Text(
+                      "وقت الحجز : ${data['time']}",
+                      style: GoogleFonts.cairo(
+                        fontWeight: FontWeight.w600,
+                        fontSize: screenWidth * .01,
+                        color: isCancelled ? Colors.grey : AppColors.whiteColor,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -127,7 +153,7 @@ class BookingCard extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundImage: NetworkImage(data['image']),
-                  radius: 40, // Responsive image size
+                  radius: screenWidth * .03, // Responsive image size
                 ),
                 const SizedBox(width: 20),
                 Expanded(
@@ -222,6 +248,8 @@ class BookingCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6.0),
       child: RichText(
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
         text: TextSpan(
           text: "$label: ",
           style: GoogleFonts.cairo(

@@ -29,6 +29,8 @@ class _AdminViewState extends State<AdminView> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       key: formKey1,
@@ -40,7 +42,7 @@ class _AdminViewState extends State<AdminView> {
             const SizedBox(height: 21),
             Image.asset(
               'assets/images/logo.png',
-              height: 200,
+              height: screenWidth*.1,
             ),
             const SizedBox(height: 21),
             SizedBox(
@@ -48,35 +50,35 @@ class _AdminViewState extends State<AdminView> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
+                    crossAxisCount: 5,
                     mainAxisSpacing: 15,
                     crossAxisSpacing: 20),
                 children: [
                   CustomButtonV(
                     text: 'الأطباء',
                     onPressed: () {
-                      Get.to(()=>DoctorsView());
+                      Get.to(() => DoctorsView());
                     },
                     img: 'assets/images/intro1.jpeg',
                   ),
                   CustomButtonV(
                     text: 'المستخدمين',
                     onPressed: () {
-                      Get.to(()=>UsersView());
+                      Get.to(() => UsersView());
                     },
                     img: 'assets/images/noChat.png',
                   ),
                   CustomButtonV(
                     text: 'الحجوزات',
                     onPressed: () {
-                      Get.to(()=>BookingsView());
+                      Get.to(() => BookingsView());
                     },
                     img: 'assets/images/intro2.png',
                   ),
                   CustomButtonV(
                     text: 'الاحصاءات',
                     onPressed: () {
-                      Get.to(()=>StView());
+                      Get.to(() => StView());
                     },
                     img: 'assets/images/intro3.jpeg',
                   ),
@@ -90,7 +92,7 @@ class _AdminViewState extends State<AdminView> {
                   CustomButtonV(
                     text: 'عرض الشكاوي',
                     onPressed: () {
-                      Get.to(()=>CompView());
+                      Get.to(() => CompView());
                     },
                     img: 'assets/images/intro3.jpeg',
                   ),

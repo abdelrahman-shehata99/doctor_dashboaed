@@ -148,7 +148,10 @@ Widget stCard(String txt,String num){
     child:Padding(padding: EdgeInsets.all(12),
     child: Column(children: [
 
-      Text(txt,style: GoogleFonts.cairo(
+      Text(txt,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: GoogleFonts.cairo(
           color:Colors.black,fontSize: 20,fontWeight: FontWeight.bold
       )),
 

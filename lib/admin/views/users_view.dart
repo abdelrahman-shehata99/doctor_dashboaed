@@ -1,4 +1,5 @@
 import 'package:doctor/admin/controller/user_controller.dart';
+import 'package:doctor/admin/widget/searchme.dart';
 import 'package:doctor/core/resources/app_validations.dart';
 import 'package:doctor/core/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,8 @@ class _UsersViewState extends State<UsersView> {
       appBar: CustomAppBar('المستخدمين', context, true),
       body: Column(
         children: [
+          const SizedBox(height: 10),
+          SearchMe(screenWidth: screenWidth, controller: controller),
           const SizedBox(height: 10),
           Container(
             margin: EdgeInsets.only(left: 10, right: 10),
@@ -90,26 +93,34 @@ class _UsersViewState extends State<UsersView> {
           ),
           GetBuilder<UserController>(builder: (_) {
             return SizedBox(
-              height: screenHeight * .82,
-              child: GridView.builder(
+              height: screenHeight * .74,
+              child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: controller.userData.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: UserCardWidget(
-                        screenWidth: screenWidth,
-                        controller: controller,
-                        user: controller.userData[index]),
-                  );
+                  return controller.userData[index]
+                              .toString()
+                              .toLowerCase()
+                              .contains('${controller.search.value}') ||
+                          controller.userData[index]
+                              .toString()
+                              .contains('${controller.search.value}')
+                      ? Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: UserCardWidget(
+                              screenWidth: screenWidth,
+                              controller: controller,
+                              user: controller.userData[index]),
+                        )
+                      : SizedBox();
                 },
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: screenWidth, // Max width per card
-                  mainAxisSpacing: 10,
-                  mainAxisExtent: 100,
-                  crossAxisSpacing: 10,
-                  //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
-                ),
+                // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                //   maxCrossAxisExtent: screenWidth, // Max width per card
+                //   mainAxisSpacing: 10,
+                //   mainAxisExtent: 100,
+                //   crossAxisSpacing: 10,
+                //   //  childAspectRatio: screenWidth /400, // Maintain proper aspect ratio
+                // ),
               ),
             );
           }),
